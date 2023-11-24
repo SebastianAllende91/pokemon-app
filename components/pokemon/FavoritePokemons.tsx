@@ -1,22 +1,18 @@
-import { FC } from 'react';
-import { Grid } from '@nextui-org/react';
-
-import { FavoriteCardPokemon } from './';
+import { Grid } from "@nextui-org/react";
+import FavoriteCardPokemon from "./FavoriteCardPokemon";
 
 interface Props {
-    pokemons: number[];
+  favoritesPokemons: number[];
 }
 
-export const FavoritePokemons: FC<Props> = ({ pokemons }) => {
+const FavoritePokemons = ({ favoritesPokemons }: Props) => {
   return (
-
-    <Grid.Container gap={ 2 } direction='row' justify='flex-start'>
-    {
-        pokemons.map( id => (
-            <FavoriteCardPokemon key={ id } pokemonId={ id } />          
-        ))
-    }
+    <Grid.Container gap={2} direction="row" justify="flex-start">
+      {favoritesPokemons.map((id) => (
+        <FavoriteCardPokemon key={id} pokemonId={id} />
+      ))}
     </Grid.Container>
-
-  )
+  );
 };
+
+export default FavoritePokemons;
